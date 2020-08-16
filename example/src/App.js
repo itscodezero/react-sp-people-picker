@@ -1,10 +1,15 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-sp-people-picker'
+import { SpPeoplePicker } from '../react-sp-people-picker'
 import 'react-sp-people-picker/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const handleGetSeletedUser = (user) => {
+    console.log(user);
+  };
+  return <SpPeoplePicker
+    getSelectedUser={handleGetSeletedUser}
+  ></SpPeoplePicker>
 }
 
 export default App
