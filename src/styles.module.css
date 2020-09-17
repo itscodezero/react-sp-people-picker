@@ -1,15 +1,15 @@
-._2abyZ {
+.spPplPickerInput {
     border: 1px solid #999;
     padding: 0.5rem;
     width: 300px;
   }
 
-  ._2BUrU {
+  .no-suggestions {
     color: #999;
     padding: 0.5rem;
   }
 
-  ._3Naml {
+  .suggestions {
     border: 1px solid #999;
     border-top-width: 0;
     list-style: none;
@@ -20,27 +20,27 @@
     width: calc(300px + 1rem);
   }
 
-  ._3Naml li {
+  .suggestions li {
     padding: 0.5rem;
   }
 
-  ._3GFEV,
-  ._3Naml li:hover {
+  .suggestion-active,
+  .suggestions li:hover {
     background-color: #008f68;
     color: #fae042;
     cursor: pointer;
     font-weight: 700;
   }
 
-  ._3Naml li:not(:last-of-type) {
+  .suggestions li:not(:last-of-type) {
     border-bottom: 1px solid #999;
   }
 
-._2wj_3 {
+.request-search-box {
   width: 300px;
   float: right;
 }
-._2wj_3 input {
+.request-search-box input {
   width: 100%;
   padding: 13px 50px 13px 13px;
   font-family: "VodafoneRg-Regular";
@@ -52,8 +52,8 @@
   border-radius: 6px;
 }
 
-  ._2wj_3
-  ._2-HtW {
+  .request-search-box
+  .request-search-icon {
   background: url("./search-icon.png") no-repeat;
   width: 30px;
   display: block;

@@ -1,7 +1,6 @@
 import React, { useState, Fragment } from "react";
-import './index.css';
 import * as spPeoplePickerAPI from "./user-profile-api";
-
+import styles from './styles.module.css';
 //default queryPamrams
 let userQueryObj = {
   queryParams: {
@@ -95,35 +94,37 @@ const SpPeoplePicker = (props) => {
 
   return (
     <Fragment>
-      <div className="relative-position">
-        <input
-          className="search"
-          type="text"
-          placeholder="Start typing..."
-          onChange={onChange}
-          onKeyDown={onKeyDown}
-          value={userInput}
-        />
-        <span className="request-search-icon"></span>
-      </div>
+      <div className={styles.request}>
+        <div className="relative-position">
+          <input
+            className="search"
+            type="text"
+            placeholder="Start typing..."
+            onChange={onChange}
+            onKeyDown={onKeyDown}
+            value={userInput}
+          />
+          <span className="request-search-icon"></span>
+        </div>
 
-      {showSuggestions && userInput ? (
-        filteredSuggestions.length > 0 ? (
-          <SuggestionListComponent
-            activeSuggestion={activeSuggestion}
-            filteredSuggestions={filteredSuggestions}
-            handleParentClick={onClick}
-          ></SuggestionListComponent>
-        ) : userInput.length > 3 ? (
-          <div class="no-suggestions">
-            <em>No maching user found!</em>
-          </div>
+        {showSuggestions && userInput ? (
+          filteredSuggestions.length > 0 ? (
+            <SuggestionListComponent
+              activeSuggestion={activeSuggestion}
+              filteredSuggestions={filteredSuggestions}
+              handleParentClick={onClick}
+            ></SuggestionListComponent>
+          ) : userInput.length > 3 ? (
+            <div class="no-suggestions">
+              <em>No maching user found!</em>
+            </div>
+          ) : (
+                <></>
+              )
         ) : (
-              <></>
-            )
-      ) : (
-          <></>
-        )}
+            <></>
+          )}
+      </div>
     </Fragment>
   );
 };
@@ -136,33 +137,17 @@ const SuggestionListComponent = (props) => {
   };
 
   return (
-    <div className="search-data">
+    <ul className="suggestions">
       {props.filteredSuggestions.map((suggestion, index) => {
-        let checked = false;
-
-        // Flag the active suggestion with a class
-        if (index === props.activeSuggestion) {
-          checked = true;
-        }
-
         return (
-          <div className="form-element mb-10" key={suggestion.Key}>
-            <label
-              className="radio-button"
-              onClick={(e) => {
-                handleClick(suggestion);
-              }}
-            >
-              <input type="radio" checked={checked} name="Tremail" />
-              <span className="label-visible">
-                <span className="fake-radiobutton"></span>
-                {`${suggestion.DisplayText}`} &nbsp;{" "}
-                {`(${suggestion.EntityData.Email})`}
-              </span>
-            </label>
-          </div>
+          <li onClick={(e) => {
+            handleClick(suggestion);
+          }}>
+            {`${suggestion.DisplayText}`}
+          </li>
+
         );
       })}
-    </div>
+    </ul>
   );
 };

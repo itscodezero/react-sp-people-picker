@@ -35,3 +35,31 @@
   .suggestions li:not(:last-of-type) {
     border-bottom: 1px solid #999;
   }
+
+.request-search-box {
+  width: 300px;
+  float: right;
+}
+.request-search-box input {
+  width: 100%;
+  padding: 13px 50px 13px 13px;
+  font-family: "VodafoneRg-Regular";
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 24px;
+  background: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 6px;
+}
+
+  .request-search-box
+  .request-search-icon {
+  background: url("./search-icon.png") no-repeat;
+  width: 30px;
+  display: block;
+  height: 28px;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  cursor: pointer;
+}

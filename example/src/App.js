@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { SpPeoplePicker } from '../react-sp-people-picker'
+import SpPeoplePicker from 'react-sp-people-picker';
 import 'react-sp-people-picker/dist/index.css'
 
 const App = () => {
