@@ -1,49 +1,52 @@
 ._1997U {
-    border: 1px solid #999;
-    padding: 0.5rem;
-    width: 300px;
-  }
-
-  ._2odnM {
-    color: #999;
-    padding: 0.5rem;
-  }
-
-  ._2QNZO {
-    border: 1px solid #999;
-    border-top-width: 0;
-    list-style: none;
-    margin-top: 0;
-    max-height: 143px;
-    overflow-y: auto;
-    padding-left: 0;
-    width: calc(300px + 1rem);
-  }
-
-  ._2QNZO li {
-    padding: 0.5rem;
-  }
-
-  ._3Wx9d,
-  ._2QNZO li:hover {
-    background-color: #008f68;
-    color: #fae042;
-    cursor: pointer;
-    font-weight: 700;
-  }
-
-  ._2QNZO li:not(:last-of-type) {
-    border-bottom: 1px solid #999;
-  }
-
-._GJn_K {
+  border: 1px solid #999;
+  padding: 0.5rem;
   width: 300px;
-  float: right;
 }
-._GJn_K input {
-  width: 100%;
+._10brd {
+  color: #999;
+  padding: 0.5rem;
+}
+._3Wg9a {
+  position: relative;
+}
+._2QNZO {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: calc(312px + 3rem);
+}
+li p {
+  font-size: 13px;
+}
+._2QNZO li {
+  padding: 0.5rem;
+}
+._3Wx9d,
+._2QNZO li:hover {
+  background-color: #008f68;
+  color: #fae042;
+  cursor: pointer;
+  font-weight: 700;
+}
+._2QNZO li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+._2z2Tk {
+  width: 24%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+._2z2Tk input {
+  width: 300px;
   padding: 13px 50px 13px 13px;
-  font-family: "VodafoneRg-Regular";
+  font-family: 'VodafoneRg-Regular';
   font-size: 18px;
   letter-spacing: 0;
   line-height: 24px;
@@ -51,10 +54,8 @@
   border: 1px solid #999999;
   border-radius: 6px;
 }
-
-  ._GJn_K
-  ._1OOf5 {
-  background: url("./search-icon.png") no-repeat;
+._2z2Tk ._yjGxg {
+  /* background: url('./searchIcon.png'); */
   width: 30px;
   display: block;
   height: 28px;

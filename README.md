@@ -15,12 +15,12 @@ npm install --save react-sp-people-picker
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-sp-people-picker'
+import SpPeoplePicker from 'react-sp-people-picker'
 import 'react-sp-people-picker/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <SpPeoplePicker />
   }
 }
 ```

@@ -1,49 +1,52 @@
 .spPplPickerInput {
-    border: 1px solid #999;
-    padding: 0.5rem;
-    width: 300px;
-  }
-
-  .no-suggestions {
-    color: #999;
-    padding: 0.5rem;
-  }
-
-  .suggestions {
-    border: 1px solid #999;
-    border-top-width: 0;
-    list-style: none;
-    margin-top: 0;
-    max-height: 143px;
-    overflow-y: auto;
-    padding-left: 0;
-    width: calc(300px + 1rem);
-  }
-
-  .suggestions li {
-    padding: 0.5rem;
-  }
-
-  .suggestion-active,
-  .suggestions li:hover {
-    background-color: #008f68;
-    color: #fae042;
-    cursor: pointer;
-    font-weight: 700;
-  }
-
-  .suggestions li:not(:last-of-type) {
-    border-bottom: 1px solid #999;
-  }
-
-.request-search-box {
+  border: 1px solid #999;
+  padding: 0.5rem;
   width: 300px;
-  float: right;
 }
-.request-search-box input {
-  width: 100%;
+.noSuggestions {
+  color: #999;
+  padding: 0.5rem;
+}
+.relativePosition {
+  position: relative;
+}
+.suggestions {
+  border: 1px solid #999;
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: calc(312px + 3rem);
+}
+li p {
+  font-size: 13px;
+}
+.suggestions li {
+  padding: 0.5rem;
+}
+.suggestion-active,
+.suggestions li:hover {
+  background-color: #008f68;
+  color: #fae042;
+  cursor: pointer;
+  font-weight: 700;
+}
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+.requestSearchBox {
+  width: 24%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.requestSearchBox input {
+  width: 300px;
   padding: 13px 50px 13px 13px;
-  font-family: "VodafoneRg-Regular";
+  font-family: 'VodafoneRg-Regular';
   font-size: 18px;
   letter-spacing: 0;
   line-height: 24px;
@@ -51,10 +54,8 @@
   border: 1px solid #999999;
   border-radius: 6px;
 }
-
-  .request-search-box
-  .request-search-icon {
-  background: url("./search-icon.png") no-repeat;
+.requestSearchBox .requestSearchIcon {
+  /* background: url('./searchIcon.png'); */
   width: 30px;
   display: block;
   height: 28px;

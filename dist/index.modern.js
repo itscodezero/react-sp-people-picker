@@ -21,29 +21,25 @@ function _catch(body, recover) {
 
 var postDataByRest = function postDataByRest(restUrl, data) {
   try {
-    try {
-      var webUrl = window._spPageContextInfo.siteServerRelativeUrl;
-      return Promise.resolve(getFormDigest(webUrl).then(function (formDigestData) {
-        return fetch(restUrl, {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json;odata=verbose",
-            Accept: "application/json;odata=verbose",
-            "X-RequestDigest": formDigestData.d.GetContextWebInformation.FormDigestValue
-          },
-          credentials: "include",
-          body: JSON.stringify(data)
-        }).then(function (response) {
-          return response.json().then(function (json) {
-            var result = [];
-            if (json.d.ClientPeoplePickerSearchUser) result = json;
-            return result;
-          });
+    var webUrl = window._spPageContextInfo.siteServerRelativeUrl;
+    return Promise.resolve(getFormDigest(webUrl).then(function (formDigestData) {
+      return fetch(restUrl, {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json;odata=verbose',
+          Accept: 'application/json;odata=verbose',
+          'X-RequestDigest': formDigestData.d.GetContextWebInformation.FormDigestValue
+        },
+        credentials: 'include',
+        body: JSON.stringify(data)
+      }).then(function (response) {
+        return response.json().then(function (json) {
+          var result = [];
+          if (json.d.ClientPeoplePickerSearchUser) result = json;
+          return result;
         });
-      }));
-    } catch (error) {
-      throw error;
-    }
+      });
+    }));
   } catch (e) {
     return Promise.reject(e);
   }
@@ -68,11 +64,11 @@ var getUserSuggesstions = function getUserSuggesstions(query) {
 var SP_SITE_URL = window._spPageContextInfo ? window._spPageContextInfo.siteAbsoluteUrl : null;
 var PEOPLE_PICKER_URL = '/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.ClientPeoplePickerSearchUser';
 
-var styles = {"spPplPickerInput":"_1997U","no-suggestions":"_2odnM","suggestions":"_2QNZO","suggestion-active":"_3Wx9d","request-search-box":"_GJn_K","request-search-icon":"_1OOf5"};
+var styles = {"spPplPickerInput":"_1997U","noSuggestions":"_10brd","relativePosition":"_3Wg9a","suggestions":"_2QNZO","suggestion-active":"_3Wx9d","requestSearchBox":"_2z2Tk","requestSearchIcon":"_yjGxg"};
 
 var userQueryObj = {
   queryParams: {
-    QueryString: "",
+    QueryString: '',
     MaximumEntitySuggestions: 10,
     AllowEmailAddresses: true,
     AllowOnlyEmailAddresses: false,
@@ -83,7 +79,7 @@ var userQueryObj = {
 };
 
 var SpPeoplePicker = function SpPeoplePicker(props) {
-  var _useState = useState(""),
+  var _useState = useState(''),
       activeSuggestion = _useState[0],
       setActiveSuggestion = _useState[1];
 
@@ -95,7 +91,7 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
       showSuggestions = _useState3[0],
       setShowSuggestions = _useState3[1];
 
-  var _useState4 = useState(""),
+  var _useState4 = useState(''),
       userInput = _useState4[0],
       setUserInput = _useState4[1];
 
@@ -107,12 +103,12 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
         var jsonData = JSON.parse(data.d.ClientPeoplePickerSearchUser);
         jsonData = jsonData.map(function (item) {
           if (item.EntityData.Email) return item;else {
-            var strSpilt = item.Key.split("|");
+            var strSpilt = item.Key.split('|');
             item.EntityData.Email = strSpilt[2];
             return item;
           }
         });
-        setActiveSuggestion("");
+        setActiveSuggestion('');
         setFilteredSuggestions(jsonData);
         setShowSuggestions(true);
       }
@@ -120,7 +116,7 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
       console.log(err);
     });
     setUserInput(e.currentTarget.value);
-    props.getSelectedUser(null);
+    props.onSelect(null);
   };
 
   var onClick = function onClick(e) {
@@ -128,7 +124,7 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
     setFilteredSuggestions([]);
     setShowSuggestions(false);
     setUserInput(e.DisplayText);
-    props.getSelectedUser(e);
+    props.onSelect(e);
   };
 
   var onKeyDown = function onKeyDown(e) {
@@ -136,13 +132,13 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
       setActiveSuggestion(0);
       setShowSuggestions(false);
       setUserInput(filteredSuggestions[activeSuggestion].DisplayText);
-      props.getSelectedUser(filteredSuggestions[activeSuggestion]);
+      props.onSelect(filteredSuggestions[activeSuggestion]);
     } else if (e.keyCode === 38) {
         if (activeSuggestion === 0) {
           return;
         }
 
-        if (activeSuggestion === "") {
+        if (activeSuggestion === '') {
           setActiveSuggestion(0);
         } else {
           setActiveSuggestion(activeSuggestion - 1);
@@ -152,7 +148,7 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
             return;
           }
 
-          if (activeSuggestion === "") {
+          if (activeSuggestion === '') {
             setActiveSuggestion(0);
           } else {
             setActiveSuggestion(activeSuggestion + 1);
@@ -161,24 +157,19 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
   };
 
   return /*#__PURE__*/React.createElement(Fragment, null, /*#__PURE__*/React.createElement("div", {
-    className: styles.request
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "relative-position"
+    className: styles.requestSearchBox
   }, /*#__PURE__*/React.createElement("input", {
-    className: "search",
     type: "text",
-    placeholder: "Start typing...",
+    placeholder: "Start typing name or email address..",
     onChange: onChange,
     onKeyDown: onKeyDown,
     value: userInput
-  }), /*#__PURE__*/React.createElement("span", {
-    className: "request-search-icon"
-  })), showSuggestions && userInput ? filteredSuggestions.length > 0 ? /*#__PURE__*/React.createElement(SuggestionListComponent, {
+  }), showSuggestions && userInput ? filteredSuggestions.length > 0 ? /*#__PURE__*/React.createElement(SuggestionListComponent, {
     activeSuggestion: activeSuggestion,
     filteredSuggestions: filteredSuggestions,
     handleParentClick: onClick
   }) : userInput.length > 3 ? /*#__PURE__*/React.createElement("div", {
-    "class": "no-suggestions"
+    className: styles.noSuggestions
   }, /*#__PURE__*/React.createElement("em", null, "No maching user found!")) : /*#__PURE__*/React.createElement(Fragment, null) : /*#__PURE__*/React.createElement(Fragment, null)));
 };
 
@@ -188,13 +179,14 @@ var SuggestionListComponent = function SuggestionListComponent(props) {
   };
 
   return /*#__PURE__*/React.createElement("ul", {
-    className: "suggestions"
+    className: styles.suggestions
   }, props.filteredSuggestions.map(function (suggestion, index) {
     return /*#__PURE__*/React.createElement("li", {
+      key: suggestion.EntityData.Email + '-' + index,
       onClick: function onClick(e) {
         handleClick(suggestion);
       }
-    }, "" + suggestion.DisplayText);
+    }, "" + suggestion.DisplayText, /*#__PURE__*/React.createElement("p", null, "" + suggestion.EntityData.Email));
   }));
 };
 
