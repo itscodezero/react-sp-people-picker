@@ -1,15 +1,15 @@
-._2abyZ {
+._1997U {
     border: 1px solid #999;
     padding: 0.5rem;
     width: 300px;
   }
 
-  ._2BUrU {
+  ._2odnM {
     color: #999;
     padding: 0.5rem;
   }
 
-  ._3Naml {
+  ._2QNZO {
     border: 1px solid #999;
     border-top-width: 0;
     list-style: none;
@@ -20,27 +20,27 @@
     width: calc(300px + 1rem);
   }
 
-  ._3Naml li {
+  ._2QNZO li {
     padding: 0.5rem;
   }
 
-  ._3GFEV,
-  ._3Naml li:hover {
+  ._3Wx9d,
+  ._2QNZO li:hover {
     background-color: #008f68;
     color: #fae042;
     cursor: pointer;
     font-weight: 700;
   }
 
-  ._3Naml li:not(:last-of-type) {
+  ._2QNZO li:not(:last-of-type) {
     border-bottom: 1px solid #999;
   }
 
-._2wj_3 {
+._GJn_K {
   width: 300px;
   float: right;
 }
-._2wj_3 input {
+._GJn_K input {
   width: 100%;
   padding: 13px 50px 13px 13px;
   font-family: "VodafoneRg-Regular";
@@ -52,8 +52,8 @@
   border-radius: 6px;
 }
 
-  ._2wj_3
-  ._2-HtW {
+  ._GJn_K
+  ._1OOf5 {
   background: url("./search-icon.png") no-repeat;
   width: 30px;
   display: block;

@@ -71,6 +71,8 @@ var getUserSuggesstions = function getUserSuggesstions(query) {
 var SP_SITE_URL = window._spPageContextInfo ? window._spPageContextInfo.siteAbsoluteUrl : null;
 var PEOPLE_PICKER_URL = '/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.ClientPeoplePickerSearchUser';
 
+var styles = {"spPplPickerInput":"_1997U","no-suggestions":"_2odnM","suggestions":"_2QNZO","suggestion-active":"_3Wx9d","request-search-box":"_GJn_K","request-search-icon":"_1OOf5"};
+
 var userQueryObj = {
   queryParams: {
     QueryString: "",
@@ -162,7 +164,7 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
   };
 
   return /*#__PURE__*/React__default.createElement(React.Fragment, null, /*#__PURE__*/React__default.createElement("div", {
-    className: "request-search-box"
+    className: styles.request
   }, /*#__PURE__*/React__default.createElement("div", {
     className: "relative-position"
   }, /*#__PURE__*/React__default.createElement("input", {

@@ -54,7 +54,7 @@
 
   .request-search-box
   .request-search-icon {
-  background: url("./search-icon.png") no-repeat;
+ /* background: url("./search-icon.png") no-repeat;*/
   width: 30px;
   display: block;
   height: 28px;
