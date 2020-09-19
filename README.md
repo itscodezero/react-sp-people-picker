@@ -20,10 +20,12 @@ import 'react-sp-people-picker/dist/index.css'
 
 class Example extends Component {
   render() {
-    return <SpPeoplePicker />
+    return <SpPeoplePicker onSelect={handleSelect} />
   }
 }
 ```
+
+just implement handleSelect(user) method which has selected SP User object as parameter.
 
 ## License
 
