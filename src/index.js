@@ -1,8 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import * as spPeoplePickerAPI from './user-profile-api'
 import styles from './styles.module.css'
-import './search-icon.png'
-// default queryPamrams
+
 const userQueryObj = {
   queryParams: {
     QueryString: '',
@@ -98,14 +97,11 @@ const SpPeoplePicker = (props) => {
       <div className={styles.requestSearchBox}>
         <input
           type='text'
-          placeholder='Start typing name or email address..'
+          placeholder='Start typing name or email address...'
           onChange={onChange}
           onKeyDown={onKeyDown}
           value={userInput}
         />
-        {/* <img src='./searchIcon.png' className={styles.requestSearchIcon} />
-        <span className={styles.requestSearchIcon} /> */}
-
         {showSuggestions && userInput ? (
           filteredSuggestions.length > 0 ? (
             <SuggestionListComponent
@@ -118,11 +114,11 @@ const SpPeoplePicker = (props) => {
               <em>No maching user found!</em>
             </div>
           ) : (
-            <></>
-          )
+                <></>
+              )
         ) : (
-          <></>
-        )}
+            <></>
+          )}
       </div>
     </Fragment>
   )

@@ -18,6 +18,17 @@ export async function getUserSuggesstions(query) {
   }
 }
 
+function getFormDigest(webUrl) {
+  return fetch(webUrl + "/_api/contextinfo", {
+    method: "post",
+    headers: { "Accept": "application/json; odata=verbose" }
+  }).then(function (response) {
+    return response.json().then(function (json) {
+      return json;
+    });
+  });
+}
+
 export async function postDataByRest(restUrl, data) {
   const webUrl = window._spPageContextInfo.siteServerRelativeUrl
   return getFormDigest(webUrl).then(function (formDigestData) {

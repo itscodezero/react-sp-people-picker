@@ -25,7 +25,7 @@ class Example extends Component {
 }
 ```
 
-just implement handleSelect(user) method which has selected SP User object as parameter.
+Just implement handleSelect(user) method which gets the selected SP User object as parameter.
 
 ## License
 

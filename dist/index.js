@@ -67,7 +67,20 @@ var getUserSuggesstions = function getUserSuggesstions(query) {
 var SP_SITE_URL = window._spPageContextInfo ? window._spPageContextInfo.siteAbsoluteUrl : null;
 var PEOPLE_PICKER_URL = '/_api/SP.UI.ApplicationPages.ClientPeoplePickerWebServiceInterface.ClientPeoplePickerSearchUser';
 
-var styles = {"spPplPickerInput":"_1997U","noSuggestions":"_10brd","relativePosition":"_3Wg9a","suggestions":"_2QNZO","suggestion-active":"_3Wx9d","requestSearchBox":"_2z2Tk","requestSearchIcon":"_yjGxg"};
+function getFormDigest(webUrl) {
+  return fetch(webUrl + "/_api/contextinfo", {
+    method: "post",
+    headers: {
+      "Accept": "application/json; odata=verbose"
+    }
+  }).then(function (response) {
+    return response.json().then(function (json) {
+      return json;
+    });
+  });
+}
+
+var styles = {"spPplPickerInput":"_1997U","noSuggestions":"_10brd","relativePosition":"_3Wg9a","suggestions":"_2QNZO","suggestion-active":"_3Wx9d","requestSearchBox":"_2z2Tk"};
 
 var userQueryObj = {
   queryParams: {
@@ -116,6 +129,40 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
         setShowSuggestions(true);
       }
     })["catch"](function (err) {
+      var jsonData = [{
+        DisplayText: "Amarjeet Kawathe",
+        EntityData: {
+          Email: "amarjeet.kawathe@vodafone.omc"
+        }
+      }, {
+        DisplayText: "Amarjeet Kawathe",
+        EntityData: {
+          Email: "amarjeet.kawathe@vodafone.omc"
+        }
+      }, {
+        DisplayText: "Amarjeet Kawathe",
+        EntityData: {
+          Email: "amarjeet.kawathe@vodafone.omc"
+        }
+      }, {
+        DisplayText: "Amarjeet Kawathe",
+        EntityData: {
+          Email: "amarjeet.kawathe@vodafone.omc"
+        }
+      }, {
+        DisplayText: "Amarjeet Kawathe",
+        EntityData: {
+          Email: "amarjeet.kawathe@vodafone.omc"
+        }
+      }, {
+        DisplayText: "Amarjeet Kawathe",
+        EntityData: {
+          Email: "amarjeet.kawathe@vodafone.omc"
+        }
+      }];
+      setActiveSuggestion('');
+      setFilteredSuggestions(jsonData);
+      setShowSuggestions(true);
       console.log(err);
     });
     setUserInput(e.currentTarget.value);
@@ -163,7 +210,7 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
     className: styles.requestSearchBox
   }, /*#__PURE__*/React__default.createElement("input", {
     type: "text",
-    placeholder: "Start typing name or email address..",
+    placeholder: "Start typing name or email address...",
     onChange: onChange,
     onKeyDown: onKeyDown,
     value: userInput

@@ -26,6 +26,20 @@
   "peerDependencies": {
     "react": "^16.0.0"
   },
+  "keywords": [
+    "SharePoint",
+    "Online",
+    "2016",
+    "2013",
+    "spfx",
+    "Framework",
+    "People",
+    "picker",
+    "react",
+    "User",
+    "UserProfile",
+    "AD"
+  ],
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
     "babel-eslint": "^10.0.3",
@@ -49,5 +63,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }
