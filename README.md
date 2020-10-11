@@ -25,7 +25,16 @@ class Example extends Component {
 }
 ```
 
+You can use the component within your function component as well.
+Add the following tag into your jsx file.
+
+```
+<SpPeoplePicker onSelect={handleSelect} />
+```
+
 Just implement handleSelect(user) method which gets the selected SP User object as parameter.
+
+For detailed usage details please read [this blog post](https://www.arreyaaar.com/post/sharepoint-people-picker-component-for-reactjs-projects).
 
 ## License
 

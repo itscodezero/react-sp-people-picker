@@ -126,40 +126,6 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
         setShowSuggestions(true);
       }
     })["catch"](function (err) {
-      var jsonData = [{
-        DisplayText: "Amarjeet Kawathe",
-        EntityData: {
-          Email: "amarjeet.kawathe@vodafone.omc"
-        }
-      }, {
-        DisplayText: "Amarjeet Kawathe",
-        EntityData: {
-          Email: "amarjeet.kawathe@vodafone.omc"
-        }
-      }, {
-        DisplayText: "Amarjeet Kawathe",
-        EntityData: {
-          Email: "amarjeet.kawathe@vodafone.omc"
-        }
-      }, {
-        DisplayText: "Amarjeet Kawathe",
-        EntityData: {
-          Email: "amarjeet.kawathe@vodafone.omc"
-        }
-      }, {
-        DisplayText: "Amarjeet Kawathe",
-        EntityData: {
-          Email: "amarjeet.kawathe@vodafone.omc"
-        }
-      }, {
-        DisplayText: "Amarjeet Kawathe",
-        EntityData: {
-          Email: "amarjeet.kawathe@vodafone.omc"
-        }
-      }];
-      setActiveSuggestion('');
-      setFilteredSuggestions(jsonData);
-      setShowSuggestions(true);
       console.log(err);
     });
     setUserInput(e.currentTarget.value);
