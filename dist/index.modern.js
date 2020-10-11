@@ -129,7 +129,6 @@ var SpPeoplePicker = function SpPeoplePicker(props) {
       console.log(err);
     });
     setUserInput(e.currentTarget.value);
-    props.onSelect(null);
   };
 
   var onClick = function onClick(e) {

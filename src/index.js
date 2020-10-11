@@ -49,7 +49,7 @@ const SpPeoplePicker = (props) => {
         console.log(err)
       })
     setUserInput(e.currentTarget.value)
-    props.onSelect(null)
+    // props.onSelect(null)
   }
 
   const onClick = (e) => {

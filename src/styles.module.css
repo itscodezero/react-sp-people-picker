@@ -1,11 +1,12 @@
 .spPplPickerInput {
   border: 1px solid #999;
   padding: 0.5rem;
-  width: 300px;
+  width: 100%;
 }
 .noSuggestions {
   color: #999;
   padding: 0.5rem;
+  width: 100%;
 }
 .relativePosition {
   position: relative;
@@ -20,7 +21,8 @@
   max-height: 300px;
   overflow-y: auto;
   padding-left: 0;
-  width: calc(312px + 3rem);
+  text-align: left;
+  width: 100%;
 }
 li p {
   font-size: 13px;
@@ -38,12 +40,12 @@ li p {
 }
 
 .requestSearchBox {
-  width: 24%;
+  width: 100%;
   position: relative;
   margin: 10px;
 }
 .requestSearchBox input {
-  width: 300px;
+  width: 100%;
   padding: 13px 50px 13px 13px;
   font-family: 'Segoe UI';
   font-size: 14px;
