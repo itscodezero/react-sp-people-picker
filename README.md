@@ -34,8 +34,6 @@ Add the following tag into your jsx file.
 
 Just implement handleSelect(user) method which gets the selected SP User object as parameter.
 
-For detailed usage information please read [this blog post](https://www.arreyaaar.com/post/sharepoint-people-picker-component-for-reactjs-projects).
-
 ## License
 
 MIT © [itszerocode](https://github.com/itszerocode)
